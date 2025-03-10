@@ -82,6 +82,7 @@ class PatientResource extends Resource
                 ]),
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
@@ -103,6 +104,7 @@ class PatientResource extends Resource
         return [
             'index' => Pages\ListPatients::route('/'),
             'create' => Pages\CreatePatient::route('/create'),
+            'view' => Pages\ViewPatient::route('/{record}'),
             'edit' => Pages\EditPatient::route('/{record}/edit'),
         ];
     }
